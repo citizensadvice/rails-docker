@@ -1,8 +1,7 @@
 FROM ruby:2.3.0
 
 RUN apt-get update && \
-  apt-get install -y nodejs --no-install-recommends && \
-  apt=get install -f mysql-client postgresql-client sqlite3 --no-install-recommends && \
+  apt-get install -y nodejs mysql-client postgresql-client sqlite3 --no-install-recommends && \
   rm -rf /var/lib/apt/lists/*
 
 ADD Gemfile* /app/
