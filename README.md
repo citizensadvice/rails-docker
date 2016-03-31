@@ -1,6 +1,6 @@
 # About this Repo
 
-This is the git repo for the Citizens Advice Ruby on Rails base image
+This is the Citizens Advice Ruby on Rails base docker image
 It uses the official docker ruby image as it's base
 
 ## Using this image
