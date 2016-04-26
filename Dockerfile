@@ -1,8 +1,11 @@
 FROM ruby:2.3.0
 
-RUN apt-get update && \
-  apt-get install -y nodejs mysql-client postgresql-client sqlite3 --no-install-recommends && \
-  rm -rf /var/lib/apt/lists/*
+ADD pgdg.list /etc/apt/sources.list.d/
+
+RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+    apt-get update && \
+    apt-get install -y postgresql-client-9.5 nodejs mysql-client sqlite3 --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD Gemfile* /app/
 WORKDIR /app
