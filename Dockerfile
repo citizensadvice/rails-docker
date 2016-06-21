@@ -9,7 +9,7 @@ RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-k
 
 ADD Gemfile* /app/
 WORKDIR /app
-RUN bundle install
+RUN gem install bundler && bundle install
 
 ONBUILD COPY . /app
 ONBUILD RUN bundle install
