@@ -6,6 +6,7 @@ RUN wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
     apt-get update && \
     apt-get install -y postgresql-client-9.5 nodejs mysql-client sqlite3 --no-install-recommends && \
     apt-get install -y imagemagick && \
+    apt-get install -y nodejs npm && \
     rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
