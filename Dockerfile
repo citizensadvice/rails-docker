@@ -21,8 +21,11 @@ ADD Gemfile* /app/
 WORKDIR /app
 RUN gem install bundler && bundle install
 
+
 ONBUILD ADD Gemfile* /app/
 ONBUILD RUN bundle install
+ONBUILD ADD package.json /app/
+ONBUILD RUN bundle exec npm install
 ONBUILD COPY . /app
 
 EXPOSE 3000
