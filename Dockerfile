@@ -21,8 +21,9 @@ ADD Gemfile* /app/
 WORKDIR /app
 RUN gem install bundler && bundle install
 
-ONBUILD COPY . /app
+ONBUILD ADD Gemfile* /app/
 ONBUILD RUN bundle install
+ONBUILD COPY . /app
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
