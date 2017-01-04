@@ -4,7 +4,7 @@ ADD pgdg.list /etc/apt/sources.list.d/
 
 RUN wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
     apt-get update && \
-    apt-get install -y postgresql-client-9.5 mysql-client sqlite3 --no-install-recommends && \
+    apt-get install -y postgresql-client-9.6 mysql-client sqlite3 --no-install-recommends && \
     apt-get install -y build-essential imagemagick nodejs-legacy && \
     rm -rf /var/lib/apt/lists/*
 
