@@ -6,6 +6,7 @@ RUN wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
     apt-get update && \
     apt-get install -y postgresql-client-9.5 mysql-client sqlite3 --no-install-recommends && \
     apt-get install -y build-essential imagemagick nodejs-legacy && \
+    apt-get install -y jmeter jmeter-http && \
     rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
