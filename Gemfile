@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails"
+gem "rails", git: "git://github.com/rails/rails.git", tag: "v5.1.0.beta1"
 gem "pg"
 gem "sass-rails"
 gem "autoprefixer-rails"
