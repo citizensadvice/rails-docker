@@ -65,4 +65,3 @@ gem "simplecov-json", require: false
 gem "ci_reporter_rspec"
 gem "rspec-sidekiq"
 gem "faraday"
-gem "rails_12factor"
