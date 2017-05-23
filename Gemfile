@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails"
+gem "rails", "~> 5.0.0"
 gem "pg"
 gem "sass-rails"
 gem "autoprefixer-rails"
@@ -63,5 +63,4 @@ gem "shoulda-matchers"
 gem "simplecov", require: false
 gem "simplecov-json", require: false
 gem "ci_reporter_rspec"
-gem "rspec-sidekiq"
 gem "faraday"
