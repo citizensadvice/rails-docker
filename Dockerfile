@@ -7,6 +7,7 @@ RUN wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
     apt-get upgrade -y && \
     apt-get install -y postgresql-client-9.6 mysql-client sqlite3 --no-install-recommends && \
     apt-get install -y build-essential imagemagick libmagic-dev nodejs-legacy && \
+    apt-get install -y wkhtmltopdf && \
     rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
