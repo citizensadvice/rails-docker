@@ -1,4 +1,4 @@
-FROM ruby:2.4.2
+FROM ruby:2.5.0
 
 ADD pgdg.list /etc/apt/sources.list.d/
 
@@ -25,13 +25,6 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     apt-get update && \
     apt-get install -y yarn && \
     rm -rf /var/lib/apt/lists/*
-
-ENV PHANTOMJS_DOWNLOAD_SHA256 86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f
-RUN curl "https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2" -L -o "phantomjs.tar.bz2" && \
-    echo "$PHANTOMJS_DOWNLOAD_SHA256 *phantomjs.tar.bz2" | sha256sum -c - && \
-    tar xjf phantomjs.tar.bz2 && \
-    mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
-    rm -rf phantomjs-2.1.1-linux-x86_64*
 
 ADD Gemfile* /app/
 WORKDIR /app
