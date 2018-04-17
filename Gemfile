@@ -8,7 +8,7 @@ source "https://rails-assets.org" do
   gem "rails-assets-popper.js"
 end
 
-gem "rails", "5.1.6"
+gem "rails"
 gem "bootsnap"
 gem "pg"                              # Postgresql
 gem "puma"
@@ -93,7 +93,7 @@ gem "shoulda-matchers"
 gem "simplecov"
 gem "simplecov-json"
 gem "simplecov-rcov"
-gem "site_prism", "2.9"
+gem "site_prism", "2.11"
 gem "chronic"
 gem "ci_reporter_rspec"
 gem "sinatra"
