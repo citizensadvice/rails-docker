@@ -1,4 +1,4 @@
-FROM ruby:2.5.1
+FROM ruby:2.5.3
 
 ADD pgdg.list /etc/apt/sources.list.d/
 
