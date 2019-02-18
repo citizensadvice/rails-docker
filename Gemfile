@@ -1,13 +1,6 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
-source "https://rails-assets.org" do
-  gem "rails-assets-bootstrap", "4.0.0.beta"
-  gem "rails-assets-jquery", "1.12.4"
-  gem "rails-assets-pikaday"
-  gem "rails-assets-popper.js"
-end
-
 gem "rails"
 gem "bootsnap"
 gem "pg"                              # Postgresql
