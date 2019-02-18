@@ -16,7 +16,7 @@ RUN curl "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wk
     mv wkhtmltox/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf && \
     rm -rf wkhtmltox
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install -y nodejs && \
     rm -rf /var/lib/apt/lists/*
 
