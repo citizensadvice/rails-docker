@@ -1,88 +1,117 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
-
-source "https://rails-assets.org" do
-  gem "rails-assets-bootstrap", "4.0.0.beta"
-  gem "rails-assets-jquery", "1.12.4"
-  gem "rails-assets-pikaday"
-  gem "rails-assets-popper.js"
-end
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "rails"
-gem "bootsnap"
+
+gem "bootsnap"                        # Speed up boot time by caching expensive operations
 gem "pg"                              # Postgresql
 gem "puma"
+
+# Assets management
 gem "autoprefixer-rails"              # Use SCSS for stylesheets
 gem "hamlit"                          # Template engine
 gem "jquery-rails"
 gem "loofah-activerecord"             # Sanitize inputs
+gem "mini_racer"
 gem "react-rails"
 gem "sass-rails"
 gem "sprockets"
-gem "therubyracer", platforms: :ruby
 gem "turbolinks"
 gem "uglifier"                        # JavaScript compressor
 gem "webpacker"
+
+# Helpers
 gem "acts_as_tree"                    # Tree structure for Advice Issue Codes
 gem "addressable"                     # URI handling
 gem "damm"                            # Checksum
+gem "graphql"
 gem "kaminari"                        # Pagination
-gem "rinku"
+gem "rinku"                           # Autolink URLs
 gem "simple_form"
 gem "truncato"                        # Truncate html
 gem "virtus"                          # Typed-attributes for POROs
+
+# Authentication and authorisation
 gem "jwt"
 gem "pundit"
+
+# Elasticsearch
 gem "elasticsearch-model"
 gem "elasticsearch-rails"
+
+# AWS
 gem "aws-sdk-s3"
 gem "faraday_middleware-aws-sigv4"
+
+# JSON formatter
 gem "active_model_serializers"
 gem "jbuilder"
+
+# Redis
 gem "hiredis"                         # C client library for Redis
-gem "readthis"                        # Replacement for ActiveSupport cache
+gem "redis"
 gem "redlock"                         # Distributed lock using Redis
 gem "sidekiq"
+
+# Attachments
 gem "clamav-client"
 gem "roda"
+gem "seven_zip_ruby"
 gem "shrine"
 gem "wicked_pdf"                              # Converts HTML to PDF
+
+# Image processing
 gem "fastimage"
 gem "image_processing"
 gem "mime-types"
 gem "mini_magick"
+# gem "ruby-filemagic"
+
+# Server
 gem "awesome_print"
-gem "coverband"                         # Code coverage
 gem "newrelic_rpm"
-gem "rack-timeout"                      # Abort requests that are taking too long
+gem "rack-timeout"
 gem "rails_semantic_logger"
+
+# Okta API
 gem "faraday_middleware"
 gem "link_header"
-gem "bootstrap-datepicker-rails"
-gem "ckeditor"                          # Rich text editor
-gem "font-awesome-rails"                # Icons
+
+# Front-end assets
+gem "bootstrap", "4.1.3"
+gem "ckeditor", "4.3.0"
+gem "font-awesome-rails"
 gem "twitter-typeahead-rails"
+
 gem "byebug"
-gem "factory_bot_rails"
+gem "factory_bot_rails", "4.11.1"
 gem "faker"
 gem "haml-lint"
+gem "json_matchers"
 gem "rails-controller-testing"
 gem "rspec-rails"
 gem "rubocop"
 gem "ruby-jmeter"
 gem "rubycritic"
 gem "webmock"
+
 gem "spring"
 gem "spring-commands-cucumber"
 gem "spring-commands-rspec"
 gem "spring-watcher-listen"
+
+gem "graphiql-rails"
 gem "listen"
 gem "web-console"
-gem "brakeman"
+
+gem "brakeman" # Security vulnerability static analysis tool
 gem "memory_profiler"
 gem "rack-mini-profiler"
+
 gem "database_cleaner"
-gem "headless"
+
+gem "browserstack-local"
 gem "capybara"
 gem "capybara-screenshot"
 gem "cucumber"
@@ -92,9 +121,11 @@ gem "selenium-webdriver"
 gem "shoulda-matchers"
 gem "simplecov"
 gem "simplecov-json"
-gem "simplecov-rcov"
-gem "site_prism", "2.11"
+gem "simplecov-rcov", github: "citizensadvice/simplecov-rcov", tag: "v0.2.3p1"
+gem "site_prism"
+
 gem "chronic"
 gem "ci_reporter_rspec"
+
 gem "sinatra"
 gem "sinatra-contrib"
