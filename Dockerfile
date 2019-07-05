@@ -14,7 +14,8 @@ RUN curl "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wk
     echo "$WKHTMLTOPDF_DOWNLOAD_SHA256 *wkhtmltopdf.tar.xz" | sha256sum -c - && \
     tar Jxvf wkhtmltopdf.tar.xz && \
     mv wkhtmltox/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf && \
-    rm -rf wkhtmltox
+    rm -rf wkhtmltox && \
+    rm wkhtmltopdf.tar.xz
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install -y nodejs && \
