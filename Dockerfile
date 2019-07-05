@@ -5,8 +5,8 @@ ADD pgdg.list /etc/apt/sources.list.d/
 RUN wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
     apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y postgresql-client-9.6 mysql-client sqlite3 --no-install-recommends && \
-    apt-get install -y build-essential imagemagick libmagic-dev nodejs-legacy xvfb fontconfig libxfont1 xfonts-base xfonts-encodings xfonts-utils x11-common && \
+    apt-get install -y postgresql-client-9.6 sqlite3 --no-install-recommends && \
+    apt-get install -y build-essential imagemagick libmagic-dev xvfb fontconfig libxfont1 xfonts-base xfonts-encodings xfonts-utils x11-common && \
     rm -rf /var/lib/apt/lists/*
 
 ENV WKHTMLTOPDF_DOWNLOAD_SHA256 049b2cdec9a8254f0ef8ac273afaf54f7e25459a273e27189591edc7d7cf29db
