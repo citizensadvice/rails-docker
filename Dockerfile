@@ -5,7 +5,7 @@ ADD pgdg.list /etc/apt/sources.list.d/
 RUN wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
     apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y postgresql-client-9.6 sqlite3 --no-install-recommends && \
+    apt-get install -y postgresql-client-9.6 --no-install-recommends && \
     apt-get install -y build-essential imagemagick libmagic-dev xvfb fontconfig libxfont1 xfonts-base xfonts-encodings xfonts-utils x11-common && \
     rm -rf /var/lib/apt/lists/*
 
