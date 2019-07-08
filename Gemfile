@@ -30,7 +30,6 @@ gem "kaminari"                        # Pagination
 gem "rinku"                           # Autolink URLs
 gem "simple_form"
 gem "truncato"                        # Truncate html
-gem "virtus"                          # Typed-attributes for POROs
 
 # Authentication and authorisation
 gem "jwt"
@@ -56,7 +55,6 @@ gem "sidekiq"
 
 # Attachments
 gem "clamav-client"
-gem "roda"
 gem "seven_zip_ruby"
 gem "shrine"
 gem "wicked_pdf"                              # Converts HTML to PDF
@@ -66,7 +64,7 @@ gem "fastimage"
 gem "image_processing"
 gem "mime-types"
 gem "mini_magick"
-# gem "ruby-filemagic"
+gem "ruby-filemagic"
 
 # Server
 gem "awesome_print"
@@ -85,7 +83,7 @@ gem "font-awesome-rails"
 gem "twitter-typeahead-rails"
 
 gem "byebug"
-gem "factory_bot_rails", "4.11.1"
+gem "factory_bot_rails"
 gem "faker"
 gem "haml-lint"
 gem "json_matchers"
