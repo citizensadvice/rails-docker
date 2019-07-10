@@ -1,4 +1,6 @@
-FROM ruby:2.5.5
+FROM ruby:2.6.3
+
+ENV BUNDLER_VERSION 2.0.2
 
 ADD pgdg.list /etc/apt/sources.list.d/
 
