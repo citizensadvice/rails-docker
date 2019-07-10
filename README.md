@@ -38,4 +38,14 @@ To generate a new rails project:
 $ docker run -it --rm --user "$(id -u):$(id -g)" -v "$PWD":/app -w /app citizensadvice/rails new --skip-bundle app-name
 ```
 
-This will create a sub-directory called app-name in your current directpry
+This will create a sub-directory called app-name in your current directory.
+
+### Updating this image
+
+For when you need to update this image to a new Rails or Ruby version or changes to the `Dockerfile` script
+
+1. Create a new branch with the name of the versions used in the format `{rails version}-ruby-{ruby version}{-extra}` e.g. `5.2.3-ruby-2.6.3` or `5.2.3-ruby-2.5.5-slim`
+2. Push changes to github
+3. Image built by docker-hub automatically
+4. Create PR to `master`
+5. Merge PR after approval without deleting branch
