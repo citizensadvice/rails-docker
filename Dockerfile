@@ -11,7 +11,7 @@ RUN wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y postgresql-client-$PG_VERSION --no-install-recommends && \
-    apt-get install -y build-essential imagemagick libmagic-dev xvfb fontconfig libxfont1 xfonts-base xfonts-encodings xfonts-utils x11-common --no-install-recommends && \
+    apt-get install -y build-essential imagemagick libmagic-dev xvfb fontconfig xfonts-base xfonts-encodings xfonts-utils x11-common --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     truncate -s 0 /var/log/*log
