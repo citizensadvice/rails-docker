@@ -35,10 +35,6 @@ gem "truncato"                        # Truncate html
 gem "jwt"
 gem "pundit"
 
-# Elasticsearch
-gem "elasticsearch-model"
-gem "elasticsearch-rails"
-
 # AWS
 gem "aws-sdk-s3"
 gem "faraday_middleware-aws-sigv4"
