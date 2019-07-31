@@ -18,16 +18,16 @@ The image contains `ONBUILD` triggers to include the app folder and install gems
 You can build and run the image:
 
 ```console
-$ docker build -t rails-app .
-$ docker run --name my-rails-app rails-app
+$ docker build --tag rails-docker .
+$ docker run --name my-rails-app rails-docker
 ```
 
-### Generating a Gemfile.lock file
+### Updating or generating Gemfile.lock file
 
 Run the following command to update the Gemfile.lock in the root of your app directory:
 
 ```console
-$ docker run --rm -v "$PWD":/app -w /app ruby:2.5.0 bundle update
+$ docker run --rm -v "$PWD":/app -w /app rails-docker bundle update
 ```
 
 ### Create a new rails application
