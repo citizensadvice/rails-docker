@@ -48,4 +48,4 @@ For when you need to update this image to a new Rails or Ruby version or changes
 2. Push changes to github
 3. Image built by docker-hub automatically
 4. Create PR to `master`
-5. Merge PR after approval without deleting branch
+5. Merge PR after approval and delete the branch
