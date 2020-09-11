@@ -9,9 +9,8 @@ ADD pgdg.list /etc/apt/sources.list.d/
 RUN curl --retry 5 --retry-connrefuse --retry-delay 4 -sL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
     apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y libreoffice && \
     apt-get install -y postgresql-client-$PG_VERSION --no-install-recommends && \
-    apt-get install -y build-essential imagemagick libmagic-dev xvfb fontconfig xfonts-base xfonts-75dpi xfonts-encodings xfonts-utils x11-common time libtiff-tools --no-install-recommends && \
+    apt-get install -y build-essential imagemagick libmagic-dev time libtiff-tools --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     truncate -s 0 /var/log/*log
