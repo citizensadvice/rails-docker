@@ -29,14 +29,6 @@ RUN curl --retry 5 --retry-connrefuse --retry-delay 4 -sS https://dl.yarnpkg.com
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     truncate -s 0 /var/log/*log
 
-RUN curl --retry 5 --retry-connrefuse --retry-delay 4 -sS https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
-    && apt-get update \
-    && apt-get install -y libxss1 \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && truncate -s 0 /var/log/*log
-
 ADD Gemfile* /app/
 WORKDIR /app
 
