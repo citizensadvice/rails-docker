@@ -2,7 +2,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "rails"
+ruby "2.7.1"
+
+gem "rails", "~> 6"
 
 gem "bootsnap"                        # Speed up boot time by caching expensive operations
 gem "pg"                              # Postgresql
@@ -16,6 +18,7 @@ gem "loofah-activerecord"             # Sanitize inputs
 gem "mini_racer"
 gem "react-rails"
 gem "sass-rails"
+gem "sassc", "~> 2.1.0"               # https://github.com/sass/sassc-ruby/issues/146
 gem "sprockets"
 gem "turbolinks"
 gem "uglifier"                        # JavaScript compressor
@@ -24,8 +27,8 @@ gem "webpacker"
 # Helpers
 gem "acts_as_tree"                    # Tree structure for Advice Issue Codes
 gem "addressable"                     # URI handling
+gem "csv-safe"                        # Escapes potential CSV injection attacks when building a CSV
 gem "damm"                            # Checksum
-gem "graphql"
 gem "kaminari"                        # Pagination
 gem "rinku"                           # Autolink URLs
 gem "simple_form"
@@ -35,8 +38,22 @@ gem "truncato"                        # Truncate html
 gem "jwt"
 gem "pundit"
 
+# Notify.gov to send SMS, email
+gem "notifications-ruby-client"
+
+# GraphQL
+gem "batch-loader"
+gem "graphql"
+
+# Elasticsearch - versions must match the server version!
+gem "elasticsearch", "~> 7"
+gem "elasticsearch-model", "~> 7"
+gem "elasticsearch-rails", "~> 7"
+
 # AWS
 gem "aws-sdk-s3"
+gem "aws-sdk-ses"
+gem "aws-sdk-sns"
 gem "faraday_middleware-aws-sigv4"
 
 # JSON formatter
@@ -50,22 +67,22 @@ gem "redlock"                         # Distributed lock using Redis
 gem "sidekiq"
 
 # Attachments
-gem "clamav-client"
+gem "clamav-client"                           # Antivirus
+gem "content_disposition"
+gem "libreconv"                               # Converts docx to PDF. Requires libreoffice
+gem "ruby-msg"                                # Convert Outlook msg files
 gem "seven_zip_ruby"
 gem "shrine"
-gem "wicked_pdf"                              # Converts HTML to PDF
 
 # Image processing
-gem "fastimage"
 gem "image_processing"
 gem "mime-types"
 gem "mini_magick"
-gem "ruby-filemagic"
 
 # Server
 gem "awesome_print"
 gem "newrelic_rpm"
-gem "rack-timeout"
+gem "rack-timeout"              # Abort requests that are taking too long
 gem "rails_semantic_logger"
 
 # Okta API
@@ -79,13 +96,15 @@ gem "font-awesome-rails"
 gem "twitter-typeahead-rails"
 
 gem "byebug"
+gem "citizens-advice-style", github: "citizensadvice/citizens-advice-style-ruby", tag: "v0.3.0"
 gem "factory_bot_rails"
 gem "faker"
 gem "haml-lint"
 gem "json_matchers"
+gem "parallel_tests"
 gem "rails-controller-testing"
 gem "rspec-rails"
-gem "rubocop"
+gem "rubocop-rails"
 gem "ruby-jmeter"
 gem "rubycritic"
 gem "webmock"
@@ -95,11 +114,10 @@ gem "spring-commands-cucumber"
 gem "spring-commands-rspec"
 gem "spring-watcher-listen"
 
-gem "graphiql-rails"
 gem "listen"
 gem "web-console"
 
-gem "brakeman" # Security vulnerability static analysis tool
+gem "brakeman"
 gem "memory_profiler"
 gem "rack-mini-profiler"
 
@@ -108,8 +126,9 @@ gem "database_cleaner"
 gem "browserstack-local"
 gem "capybara"
 gem "capybara-screenshot"
+gem "capybara_accessible_selectors", github: "citizensadvice/capybara_accessible_selectors", tag: "v0.2.0"
 gem "cucumber"
-gem "cucumber-rails"
+gem "cucumber-rails", "~> 2.1.0"
 gem "cuke_sniffer"
 gem "selenium-webdriver"
 gem "shoulda-matchers"
@@ -120,6 +139,6 @@ gem "site_prism"
 
 gem "chronic"
 gem "ci_reporter_rspec"
+gem "rotp"
 
-gem "sinatra"
-gem "sinatra-contrib"
+gem "coverband"
