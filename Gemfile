@@ -73,7 +73,7 @@ gem "faraday_middleware"
 gem "link_header"
 
 # Front-end assets
-gem "bootstrap", "4.1.3"
+gem "bootstrap", "4.3.1"
 gem "ckeditor", "4.3.0"
 gem "font-awesome-rails"
 gem "twitter-typeahead-rails"
